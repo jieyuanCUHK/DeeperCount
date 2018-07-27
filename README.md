@@ -5,15 +5,13 @@ Users can use DeeperCount and their labeled images to easily train a UNet.
 --------------
 ## System requirements
 
-The code of DeeperCount runs under Linux (i.e., Centos, https://www.centos.org/) on a 64-bit machine with at least two GPUs. It requires Python 2.7, [pip](https://bootstrap.pypa.io/get-pip.py) and several python packages including numpy, scipy, sklearn, matplotlib, cv2, [Keras](https://github.com/keras-team/keras), [Tensorflow](https://github.com/tensorflow/tensorflow) and [imgaug](https://github.com/aleju/imgaug).
+The code of DeeperCount runs under Linux (i.e., Centos, https://www.centos.org/) on a 64-bit machine with at least two GPUs. It requires Python 2.7, [pip](https://bootstrap.pypa.io/get-pip.py) and several python packages including numpy, scipy, sklearn, matplotlib, cv2, [Keras](https://github.com/keras-team/keras), [Tensorflow](https://github.com/tensorflow/tensorflow) and [imgaug](https://github.com/aleju/imgaug). Before running DeeperCount code, these packages should be installed manually. To utilize GPUs, [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads) should also be installed for NVIDIA GPUs.
 
-We provide utility (INSTALL.pl) to install these packages automatically with a single command. If you want to install them manually, please download get-pip.py from https://bootstrap.pypa.io/get-pip.py and install pip module with [instructions](https://pip.pypa.io/en/stable/installing/).
-
-LncFunTK have been tested in CentOS release 6.2, Debian 7.0 3.2.60-1+deb7u3 and ubuntu 16.04 LTS (Linux OS 64 bit).
+We have tested these code in CentOS Linux release 7.3.1611, Keras 2.1.2, Tensorflow 1.4.0 and CUDA 8.0.61.
 
 ## Installation
 
-### Get lncFunTK
+### Get DeeperCount
 ```
 git clone https://github.com/zhoujj2013/lncfuntk.git --depth 1
 
@@ -105,7 +103,3 @@ perl $lncFunTK_install_dir/bin/Training/Training.pl XXXX.Neighbor.stat postive.l
 LR.result file contains the optimal weight values for FIS calculation. You can use the newly trained optimal weight values for lncFunTK analysis by replacing the pretrained weight value configure file (bin/Training/pretrained.weight.value.lst). 
 
 ## Please cite
-
-1. Jiajian Zhou, et al. "lncFunTK: A toolkit for functional annotation of long noncoding RNAs." Bioinformatics bty339 (2018): https://doi.org/10.1093/bioinformatics/bty339
-
-2. Zhou, Jiajian, et al. "LncFunNet: an integrated computational framework for identification of functional long noncoding RNAs in mouse skeletal muscle cells." Nucleic acids research 45.12 (2017): e108-e108.
