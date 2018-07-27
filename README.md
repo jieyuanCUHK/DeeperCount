@@ -5,7 +5,7 @@ Users can use DeeperCount and their labeled images to easily train a UNet.
 --------------
 ## System requirements
 
-The code of DeeperCount runs under Linux (i.e., Centos, https://www.centos.org/) on a 64-bit machine with at least two GPUs. It requires Python 2.7, PERL v5, [pip](https://bootstrap.pypa.io/get-pip.py) and several python packages listed in [python.package.requirement.txt](https://github.com/zhoujj2013/lncfuntk/blob/master/python.package.requirement.txt).;
+The code of DeeperCount runs under Linux (i.e., Centos, https://www.centos.org/) on a 64-bit machine with at least two GPUs. It requires Python 2.7, [pip](https://bootstrap.pypa.io/get-pip.py) and several python packages including numpy, scipy, sklearn, matplotlib, cv2, [Keras](https://github.com/keras-team/keras), [Tensorflow](https://github.com/tensorflow/tensorflow) and [imgaug](https://github.com/aleju/imgaug).
 
 We provide utility (INSTALL.pl) to install these packages automatically with a single command. If you want to install them manually, please download get-pip.py from https://bootstrap.pypa.io/get-pip.py and install pip module with [instructions](https://pip.pypa.io/en/stable/installing/).
 
