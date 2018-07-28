@@ -56,6 +56,7 @@ python ./02_source_code/1_image_deformation.py
 ```
 
 3. image augmentation:
+
 (1) using implementation in Keras, simple augmentation:
 ```
 python ./02_source_code_for_training/2_original_image_augmentation.py number_of_images_after_augmentation
@@ -75,6 +76,7 @@ python ./02_source_code_for_training/5_training_DeeperCount.py network_parameter
 ```
 
 5. do prediction:
+
 (1) process images that need to predict:
 ```
 python ./04_source_code_for_predicting/0_get_ready_for_predicting.py image_format
