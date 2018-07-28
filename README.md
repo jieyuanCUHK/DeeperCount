@@ -1,4 +1,4 @@
-# DeeperCount: implementation of UNet in Keras with image deformation and complex image augmentation.
+# DeeperCount: implementation of UNet in Keras with image deformation and complexed image augmentation.
 
 Users can use DeeperCount and their labeled images to easily train a UNet.
 
