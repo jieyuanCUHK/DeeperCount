@@ -57,13 +57,13 @@ python ./02_source_code/1_image_deformation.py
 
 * image augmentation:
 
->>* using implementation in Keras, simple augmentation:
+>* using implementation in Keras, simple augmentation:
 ```console
 python ./02_source_code_for_training/2_original_image_augmentation.py number_of_images_after_augmentation
 # results will be stored in ./03_image_directory/After_augmentation_primary
 ```
 
->>* or using imgaug, complexed image augmentation:
+>* or using imgaug, complexed image augmentation:
 ```console
 python ./02_source_code_for_training/3_enhanced_image_augmentation.py batch_num batch_size
 # results will be stored in ./03_image_directory/After_augmentation_primary
@@ -77,14 +77,14 @@ python ./02_source_code_for_training/5_training_DeeperCount.py network_parameter
 
 * do prediction:
 
->>* process images that need to predict:
+>* process images that need to predict:
 ```console
 python ./04_source_code_for_predicting/0_get_ready_for_predicting.py image_format
 # supported image format: jpg/png/tif
 # the images that need to predict: are stored in ./03_image_directory/Predict_image
 ```
 
->>* final image prediction:
+>* final image prediction:
 ```console
 python ./04_source_code_for_predicting/1_predicting_using_DeeperCount.py network_parameter
 # need to specify the parameter you want to use: unet_user_new.hdf5|unet.hdf5|unet_refined.hdf5
