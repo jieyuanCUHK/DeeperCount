@@ -4,6 +4,7 @@ tar -xzvf ./01_model_parameters/parameter.tar.gz -C ./01_model_parameters
 
 #1. first split large images to 512*512 tif images:
 python ./02_source_code_for_training/0_split_image.py image_format
+#images should be put into ./03_image_directory/Train_image and ./03_image_directory/Label_image
 #supported image format: jpg/png/tif
 #splited images will be stored into ./03_image_directory/Split_train_image and ./03_image_directory/Split_label_image
 
@@ -20,7 +21,7 @@ python ./02_source_code_for_training/2_original_image_augmentation.py number_of_
 python ./02_source_code_for_training/3_enhanced_image_augmentation.py batch_num batch_size
 #results will be stored in ./03_image_directory/After_augmentation_primary
 
-#4. train the model, please change the number of GPU/number of Epoch/Batch size:
+#4. train the model, please change the number of GPU/number of epoch/batch size:
 python ./02_source_code_for_training/5_training_DeeperCount.py network_parameter  
 #need to specify the model parameter you want to use: unet_refined.hdf5|unet.hdf5
 
