@@ -77,14 +77,14 @@ python ./02_source_code_for_training/5_training_DeeperCount.py network_parameter
 
 5. do prediction:
 
->5.1. process images that need to predict:
+  5.1. process images that need to predict:
 ```console
 python ./04_source_code_for_predicting/0_get_ready_for_predicting.py image_format
 # supported image format: jpg/png/tif
 # the images that need to predict: are stored in ./03_image_directory/Predict_image
 ```
 
->5.2. final image prediction:
+  5.2. final image prediction:
 ```console
 python ./04_source_code_for_predicting/1_predicting_using_DeeperCount.py network_parameter
 # need to specify the parameter you want to use: unet_user_new.hdf5|unet.hdf5|unet_refined.hdf5
