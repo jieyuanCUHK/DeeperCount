@@ -12,7 +12,7 @@ We have tested these code in CentOS Linux release 7.3.1611, Keras 2.1.2, Tensorf
 ## Using DeeperCount
 
 ### Get DeeperCount
-```
+```shell
 git clone https://github.com/jieyuanCUHK/DeeperCount.git
 ```
 
