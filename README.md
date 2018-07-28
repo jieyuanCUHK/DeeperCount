@@ -49,42 +49,42 @@ python ./02_source_code_for_training/0_split_image.py image_format
 # splited images will be stored into ./03_image_directory/Split_train_image and ./03_image_directory/Split_label_image
 ```
 
-* then conduct image deformation;
+#### 3. conduct image deformation;
 ```console
 python ./02_source_code/1_image_deformation.py
 # merged image and image after deformation will be stored in ./03_image_directory/Merged_after_deform
 ```
 
-* image augmentation:
+#### 4. conduct image augmentation:
 
->* using implementation in Keras, simple augmentation:
+##### 4.1 using implementation in Keras, simple augmentation:
 ```console
 python ./02_source_code_for_training/2_original_image_augmentation.py number_of_images_after_augmentation
 # results will be stored in ./03_image_directory/After_augmentation_primary
 ```
 
->* or using imgaug, complexed image augmentation:
+##### 4.2 or using imgaug, complexed image augmentation:
 ```console
 python ./02_source_code_for_training/3_enhanced_image_augmentation.py batch_num batch_size
 # results will be stored in ./03_image_directory/After_augmentation_primary
 ```
 
-* train the model, please change the number of GPU/number of epoch/batch size:
+#### 5. train the model, please change the number of GPU/number of epoch/batch size:
 ```console
 python ./02_source_code_for_training/5_training_DeeperCount.py network_parameter  
 # need to specify the model parameter you want to use: unet_refined.hdf5|unet.hdf5
 ```
 
-* do prediction:
+#### 6. do prediction:
 
->* process images that need to predict:
+##### 6.1 process images that need to predict:
 ```console
 python ./04_source_code_for_predicting/0_get_ready_for_predicting.py image_format
 # supported image format: jpg/png/tif
 # the images that need to predict: are stored in ./03_image_directory/Predict_image
 ```
 
->* final image prediction:
+##### 6.2 final image prediction:
 ```console
 python ./04_source_code_for_predicting/1_predicting_using_DeeperCount.py network_parameter
 # need to specify the parameter you want to use: unet_user_new.hdf5|unet.hdf5|unet_refined.hdf5
