@@ -35,13 +35,13 @@ source env/bin/activate
 
 After all the required python packages are installed in the created virtual environment manually by the user using pip command, DeeperCount can be executed following commands in run.sh:
 
-* download parameter needed for network training:
+####1. download parameter needed for network training:
 ```console
 wget -P ./01_model_parameters http://sunlab.cpy.cuhk.edu.hk/DeeperCount/parameter.tar.gz
 tar -xzvf ./01_model_parameters/parameter.tar.gz -C ./01_model_parameters
 ```
 
-* first split large images to 512*512 tif images:
+####2. split large images to 512*512 tif images:
 ```console
 python ./02_source_code_for_training/0_split_image.py image_format
 # images should be put into ./03_image_directory/Train_image and ./03_image_directory/Label_image
