@@ -1,6 +1,6 @@
 #0. download parameter needed for network training:
 wget -P ./01_model_parameters http://sunlab.cpy.cuhk.edu.hk/DeeperCount/parameter.tar.gz
-tar -xzvf ./01_model_parameters/parameter.tar.gz
+tar -xzvf ./01_model_parameters/parameter.tar.gz -C ./01_model_parameters
 
 #1. first split large images to 512*512 tif images:
 python ./02_source_code_for_training/0_split_image.py image_format
