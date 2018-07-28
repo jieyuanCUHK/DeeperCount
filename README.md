@@ -9,16 +9,12 @@ The code of DeeperCount runs under Linux (i.e., Centos, https://www.centos.org/)
 
 We have tested these code in CentOS Linux release 7.3.1611, Keras 2.1.2, Tensorflow 1.4.0 and CUDA 8.0.61.
 
-## Installation
+## Using DeeperCount
 
 ### Get DeeperCount
 ```
-git clone https://github.com/zhoujj2013/lncfuntk.git --depth 1
+git clone https://github.com/jieyuanCUHK/DeeperCount.git
 
-or
-
-wget http://sunlab.cpy.cuhk.edu.hk/lncfuntk/lncfuntk-master.zip
-unzip lncfuntk-master.zip
 ```
 
 ### Installation
