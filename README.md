@@ -12,7 +12,7 @@ We have tested these code in CentOS Linux release 7.3.1611, Keras 2.1.2, Tensorf
 ## Using DeeperCount
 
 ### Get DeeperCount
-```shell
+```console
 git clone https://github.com/jieyuanCUHK/DeeperCount.git
 ```
 
@@ -20,7 +20,7 @@ git clone https://github.com/jieyuanCUHK/DeeperCount.git
 
 We recommend run DeeperCount code under an isolated python environment, e.g. a virtual python environment created using following commands via [virtualenv](https://virtualenv.pypa.io/en/stable/):
 
-```
+```console
 cd ./DeeperCount
 
 # clean PYTHONPATH
@@ -36,13 +36,13 @@ source env/bin/activate
 After all the required python packages are installed in the created virtual environment manually by the user using pip command, DeeperCount can be executed following commands in run.sh:
 
 0. download parameter needed for network training:
-```
+```console
 wget -P ./01_model_parameters http://sunlab.cpy.cuhk.edu.hk/DeeperCount/parameter.tar.gz
 tar -xzvf ./01_model_parameters/parameter.tar.gz -C ./01_model_parameters
 ```
 
 1. first split large images to 512*512 tif images:
-```
+```console
 python ./02_source_code_for_training/0_split_image.py image_format
 # images should be put into ./03_image_directory/Train_image and ./03_image_directory/Label_image
 # supported image format: jpg/png/tif
@@ -50,7 +50,7 @@ python ./02_source_code_for_training/0_split_image.py image_format
 ```
 
 2. then conduct image deformation;
-```
+```console
 python ./02_source_code/1_image_deformation.py
 # merged image and image after deformation will be stored in ./03_image_directory/Merged_after_deform
 ```
@@ -58,34 +58,34 @@ python ./02_source_code/1_image_deformation.py
 3. image augmentation:
 
 3.1. using implementation in Keras, simple augmentation:
-```
+```console
 python ./02_source_code_for_training/2_original_image_augmentation.py number_of_images_after_augmentation
 # results will be stored in ./03_image_directory/After_augmentation_primary
 ```
 
 3.2. or using imgaug, complexed image augmentation:
-```
+```console
 python ./02_source_code_for_training/3_enhanced_image_augmentation.py batch_num batch_size
 # results will be stored in ./03_image_directory/After_augmentation_primary
 ```
 
 4. train the model, please change the number of GPU/number of epoch/batch size:
-```
+```console
 python ./02_source_code_for_training/5_training_DeeperCount.py network_parameter  
 # need to specify the model parameter you want to use: unet_refined.hdf5|unet.hdf5
 ```
 
 5. do prediction:
 
-5.1. process images that need to predict:
-```
+>5.1. process images that need to predict:
+```console
 python ./04_source_code_for_predicting/0_get_ready_for_predicting.py image_format
 # supported image format: jpg/png/tif
 # the images that need to predict: are stored in ./03_image_directory/Predict_image
 ```
 
-5.2. final image prediction:
-```
+>5.2. final image prediction:
+```console
 python ./04_source_code_for_predicting/1_predicting_using_DeeperCount.py network_parameter
 # need to specify the parameter you want to use: unet_user_new.hdf5|unet.hdf5|unet_refined.hdf5
 # the predicted images are stored in ./03_image_directory/Predict_image in jpg format 
