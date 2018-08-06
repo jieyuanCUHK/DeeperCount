@@ -1,6 +1,6 @@
-# DeeperCount: implementation of UNet in Keras with image deformation and complexed image augmentation.
+# DeeperCount: implementation of U-Net in Keras with image deformation and complexed image augmentation.
 ![](https://github.com/jieyuanCUHK/DeeperCount/blob/master/Logo.jpg)
-Users can use DeeperCount and their labeled images to easily train a UNet.
+Users can use DeeperCount and their labeled images to easily train a U-Net.
 
 ---
 ## System requirements
