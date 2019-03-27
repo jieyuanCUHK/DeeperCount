@@ -50,20 +50,20 @@ def splitimages(path,path_save,img_type):
 				for col in range (0,img.shape[1]-512,30):
 
 					#if you do not want to lose information:
-					if img.shape[1]-col>30:
+					if img.shape[1]-col-512>30:
 						imgdatas[:,:,0]=img[row:row+512,col:col+512,0]
 						new=array_to_img(imgdatas)
 						new.save(path_save+"/"+midname+" "+str(col)+str(row)+".tif")
-					elif img.shape[1]-col<30 and img.shape[0]-row>30:
+					elif img.shape[1]-col-512<30 and img.shape[0]-row-512>30:
 						imgdatas[:,:,0]=img[row:row+512,img.shape[1]-512:img.shape[1],0]
 						new=array_to_img(imgdatas)
 						new.save(path_save+"/"+midname+" "+str(img.shape[1])+str(row)+".tif")
-					if img.shape[0]-row<30 and img.shape[1]-col>30:
+					if img.shape[0]-row-512<30 and img.shape[1]-col-512>30:
 						imgdatas[:,:,0]=img[img.shape[0]-512:img.shape[0],col:col+512,0]
 						new=array_to_img(imgdatas)
 						new.save(path_save+"/"+midname+" "+str(col)+str(img.shape[0])+".tif")
 						
-					if img.shape[0]-row<30 and img.shape[1]-col<30:
+					if img.shape[0]-row-512<30 and img.shape[1]-col-512<30:
 						imgdatas[:,:,0]=img[img.shape[0]-512:img.shape[0],img.shape[1]-512:img.shape[1],0]	
 						new=array_to_img(imgdatas)
 						new.save(path_save+"/"+midname+" "+str(img.shape[1])+str(img.shape[0])+".tif")
