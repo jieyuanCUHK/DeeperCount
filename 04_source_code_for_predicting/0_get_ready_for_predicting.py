@@ -70,22 +70,22 @@ class dataProcess(object):
 #							i +=1
 							
 							#if you do not want to lose information:
-		                                        if img.shape[1]-col>30:
+		                                        if img.shape[1]-col-512>30:
                 		                                imgdatas[i]=img[row:row+512,col:col+512]
                                 		                namearr.append(midname[:midname.rindex(".")]+str(row)+"_"+str(col))
 								i +=1
                                                 		
-		                                        elif img.shape[1]-col<30 and img.shape[0]-row>30:
+		                                        elif img.shape[1]-col-512<30 and img.shape[0]-row-512>30:
 		                                                imgdatas[i]=img[row:row+512,img.shape[1]-512:img.shape[1]]
                                         			namearr.append(midname[:midname.rindex(".")]+str(row)+"_"+str(img.shape[1]))
 								i +=1
-							if img.shape[0]-row<30 and img.shape[1]-col>30:
+							if img.shape[0]-row-512<30 and img.shape[1]-col-512>30:
 
 		                                                imgdatas[i]=img[img.shape[0]-512:img.shape[0],col:col+512]
 								namearr.append(midname[:midname.rindex(".")]+str(img.shape[0])+"_"+str(col))
 								i +=1
 							
-        		                                if img.shape[0]-row<30 and img.shape[1]-col<30:
+        		                                if img.shape[0]-row-512<30 and img.shape[1]-col-512<30:
 	                	                                imgdatas[i]=img[img.shape[0]-512:img.shape[0],img.shape[1]-512:img.shape[1]]
 								namearr.append(midname[:midname.rindex(".")]+str(img.shape[0])+"_"+str(img.shape[1]))
 								i +=1
