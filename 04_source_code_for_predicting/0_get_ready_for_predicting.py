@@ -70,12 +70,12 @@ class dataProcess(object):
 #							i +=1
 							
 							#if you do not want to lose information:
-		                                        if img.shape[1]-col-512>30:
+		                                        if img.shape[1]-col-512>30 and img.shape[0]-row-512>30:
                 		                                imgdatas[i]=img[row:row+512,col:col+512]
                                 		                namearr.append(midname[:midname.rindex(".")]+str(row)+"_"+str(col))
 								i +=1
                                                 		
-		                                        elif img.shape[1]-col-512<30 and img.shape[0]-row-512>30:
+		                                        if img.shape[1]-col-512<30 and img.shape[0]-row-512>30:
 		                                                imgdatas[i]=img[row:row+512,img.shape[1]-512:img.shape[1]]
                                         			namearr.append(midname[:midname.rindex(".")]+str(row)+"_"+str(img.shape[1]))
 								i +=1
