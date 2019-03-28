@@ -13,15 +13,14 @@ import sys
 from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_array, load_img
 import shutil
 
-#test_r_path="../0_images_input/"+sys.argv[1]+'/'
-test_r_path="./"
-#test_path="../0_images_input/"+sys.argv[1]+'/'
-test_path="./"
+
+test_r_path="./03_image_directory/Predict_image"
+test_path="./03_image_directory/Prediction_results/"
 
 img_type="jpg"
 imgs = glob.glob(test_r_path+"/*."+img_type)
 test_imgs=glob.glob(test_path+"/*.tif")
-save_path=test_path+'/deep_results'
+save_path=test_path+'Merged/'
 
 if not os.path.lexists(save_path):
     os.mkdir(save_path)
