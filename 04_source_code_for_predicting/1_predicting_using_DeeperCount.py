@@ -63,8 +63,8 @@ class myUnet(object):
 		for i in range(imgs.shape[0]):
 			img = imgs[i]
 			img = array_to_img(img)
-			img.save(temp+'/'+str(names[i])+".jpg")
-
+			img.save(temp+'/prediction_results_'+str(names[i])+".jpg")
+			#temp is: ./03_image_directory/Predict_image/
 
 	def predict(self, model, option):
 		print('Predict images')
@@ -135,7 +135,7 @@ if __name__ == '__main__':
 		model=myunet.create_model()
 
 		#do not use multi GPU by default
-		#model = multi_gpu_model(model, gpus=3)
+		#model = multi_gpu_model(model, gpus=2)
 		model.load_weights("./01_model_parameters/unet.hdf5")
 		temp=myunet.predict(model,option="aug")
 		myunet.save_predicted_img(temp)
@@ -144,7 +144,7 @@ if __name__ == '__main__':
 		model=myunet.create_model()
 		
 		#do not use multi GPU by default
-		#model = multi_gpu_model(model, gpus=3)
+		#model = multi_gpu_model(model, gpus=2)
 		model.load_weights("./01_model_parameters/unet_refined.hdf5")
 		temp=myunet.predict(model,option="aug")
 		myunet.save_predicted_img(temp)
@@ -153,7 +153,7 @@ if __name__ == '__main__':
 		model=myunet.create_model()
 
 		#do not use multi GPU by default
-		#model = multi_gpu_model(model, gpus=3)
+		#model = multi_gpu_model(model, gpus=2)
 		model.load_weights("./01_model_parameters/unet_user_new.hdf5")
 		temp=myunet.predict(model,option="aug")
 		myunet.save_predicted_img(temp)
