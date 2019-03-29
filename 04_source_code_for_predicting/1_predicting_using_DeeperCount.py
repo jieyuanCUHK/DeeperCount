@@ -63,7 +63,7 @@ class myUnet(object):
 		for i in range(imgs.shape[0]):
 			img = imgs[i]
 			img = array_to_img(img)
-			img.save('./03_image_directory/Prediction_results/'+str(names[i])+".jpg")
+			img.save('./03_image_directory/Prediction_results/'+str(names[i])+"_.jpg")
 			#temp is: ./03_image_directory/Predict_image/
 
 	def predict(self, model, option):
