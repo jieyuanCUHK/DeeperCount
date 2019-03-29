@@ -78,6 +78,7 @@ python 02_source_code_for_training/4_get_ready_for_training.py
 ```console
 python ./02_source_code_for_training/5_training_DeeperCount.py network_parameter  
 # need to specify the model parameter you want to use: unet_refined.hdf5|unet.hdf5
+# please pay attention that the unet_refined.hdf5 parameter was trained using multi-gpus, while unet.hdf5 was not. 
 ```
 
 #### 7. do prediction:
