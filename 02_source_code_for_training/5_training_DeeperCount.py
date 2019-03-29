@@ -143,9 +143,10 @@ if __name__ == '__main__':
 		earlystopper = EarlyStopping(monitor='val_loss', patience=5, verbose=1)
 		model_checkpoint = ModelCheckpoint('./01_model_parameters/unet_user_new.hdf5', monitor='loss',verbose=1, save_best_only=True)
 
-		history=model.fit(train_x, train_y, batch_size=10, nb_epoch=1, verbose=1,shuffle=True, validation_data=(val_x,val_y),callbacks=[model_checkpoint,earlystopper])
+		history=model.fit(train_x, train_y, batch_size=1, nb_epoch=1, verbose=1,shuffle=True, validation_data=(val_x,val_y),callbacks=[model_checkpoint,earlystopper])
 
 		#draw performance figures;
+		'''
 		plt.plot(history.history['acc'])
 		plt.plot(history.history['val_acc'])
 		plt.title('Model Accuracy Using User Images')
@@ -161,7 +162,7 @@ if __name__ == '__main__':
 		plt.xlabel('Epoch')
 		plt.legend(['train', 'test'], loc='upper left')
 		plt.savefig("loss_perfor.png")
-
+		'''
 	elif sys.argv[1]=="unet_refined.hdf5":
 	#want to fine tune the parameters learned on fiber staining images
 		model=myunet.create_model()
@@ -178,9 +179,10 @@ if __name__ == '__main__':
 		earlystopper = EarlyStopping(monitor='val_loss', patience=5, verbose=1)
 		model_checkpoint = ModelCheckpoint('unet_user_new.hdf5', monitor='loss',verbose=1, save_best_only=True)
 
-		history=model.fit(train_x, train_y, batch_size=10, nb_epoch=1, verbose=1,shuffle=True, validation_data=(val_x,val_y),callbacks=[model_checkpoint,earlystopper])
+		history=model.fit(train_x, train_y, batch_size=1, nb_epoch=1, verbose=1,shuffle=True, validation_data=(val_x,val_y),callbacks=[model_checkpoint,earlystopper])
 
 		#draw performance figures:
+		'''
 		plt.plot(history.history['acc'])
 		plt.plot(history.history['val_acc'])
 		plt.title('Model Accuracy Using User Images')
@@ -196,6 +198,7 @@ if __name__ == '__main__':
 		plt.xlabel('Epoch')
 		plt.legend(['train', 'test'], loc='upper left')
 		plt.savefig("loss_perfor.png")
+		'''
 	else:
 	#error, give a message and quit
 		print 'DeeperCount U-Net training code, please specify the model parameter you want to use.'
