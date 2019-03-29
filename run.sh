@@ -19,7 +19,7 @@ python ./02_source_code_for_training/2_original_image_augmentation.py number_of_
 
 #(2) or using imgaug, complexed image augmentation:
 python ./02_source_code_for_training/3_enhanced_image_augmentation.py batch_num batch_size
-#results will be stored in ./03_image_directory/After_augmentation_primary
+#results will be stored in ./03_image_directory/After_augmentation_primary. The number of augmented image will be batch_num*batch_size*(original image+deformed image).
 
 #4. train the model, please change the number of GPU/number of epoch/batch size:
 python ./02_source_code_for_training/5_training_DeeperCount.py network_parameter  
