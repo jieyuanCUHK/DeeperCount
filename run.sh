@@ -10,7 +10,7 @@ python ./02_source_code_for_training/0_split_image.py image_format
 
 #2. then conduct image deformation;
 python ./02_source_code/1_image_deformation.py
-#merged image and image after deformation will be stored in ./03_image_directory/Merged_after_deform
+#merged image and image after deformation will be stored in ./03_image_directory/Merged_after_deform, with "train" in name beginning.
 
 #3. image augmentation:
 #(1) using implementation in Keras, simple augmentation:
