@@ -80,6 +80,7 @@ python ./02_source_code_for_training/5_training_DeeperCount.py network_parameter
 # need to specify the model parameter you want to use: unet_refined.hdf5|unet.hdf5
 # please pay attention that the unet_refined.hdf5 parameter was trained using multi-gpus, while unet.hdf5 was not. 
 # please change the critical parameters including learning rate, optimization algorithm, epoch number, batch size, etc. according to your experiment.
+# the parameter after transfer learning is ./01_model_parameters/unet_user_new.hdf5.
 ```
 
 #### 7. do prediction:
