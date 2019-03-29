@@ -10,7 +10,7 @@ python ./02_source_code_for_training/0_split_image.py image_format
 
 #2. then conduct image deformation;
 python ./02_source_code/1_image_deformation.py
-#merged image and image after deformation will be stored in ./03_image_directory/Merged_after_deform. Images with "train" in name beginning are the deformed images.
+#merged image (merging image and label into different channels of one image) and image after deformation will be stored in ./03_image_directory/Merged_after_deform. Images with "train" in name beginning are the deformed images.
 
 #3. image augmentation:
 #(1) using implementation in Keras, simple augmentation:
@@ -21,11 +21,15 @@ python ./02_source_code_for_training/2_original_image_augmentation.py number_of_
 python ./02_source_code_for_training/3_enhanced_image_augmentation.py batch_num batch_size
 #results will be stored in ./03_image_directory/After_augmentation_primary. The number of augmented image will be batch_num*batch_size*(original image+deformed image).
 
-#4. train the model, please change the number of GPU/number of epoch/batch size:
+#4. split the merged image, getting ready for training:
+python 02_source_code_for_training/4_get_ready_for_training.py 
+# the channel-splited images will be stored in ./03_image_directory/Final_label and ./03_image_directory/Final_train.
+
+#5. train the model, please change the number of GPU/number of epoch/batch size:
 python ./02_source_code_for_training/5_training_DeeperCount.py network_parameter  
 #need to specify the model parameter you want to use: unet_refined.hdf5|unet.hdf5
 
-#5. do prediction:
+#6. do prediction:
 #(1) process images that need to predict:
 python ./04_source_code_for_predicting/0_get_ready_for_predicting.py image_format
 #supported image format: jpg/png/tif
