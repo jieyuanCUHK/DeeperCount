@@ -53,20 +53,20 @@ def splitimages(path,path_save,img_type):
 					if img.shape[1]-col-512>30 and img.shape[0]-row-512>30:
 						imgdatas[:,:,0]=img[row:row+512,col:col+512,0]
 						new=array_to_img(imgdatas)
-						new.save(path_save+"/"+midname+" "+str(col)+str(row)+".tif")
+						new.save(path_save+"/"+midname+"_"+str(col)+"_"+str(row)+".tif")
 					if img.shape[1]-col-512<30 and img.shape[0]-row-512>30:
 						imgdatas[:,:,0]=img[row:row+512,img.shape[1]-512:img.shape[1],0]
 						new=array_to_img(imgdatas)
-						new.save(path_save+"/"+midname+" "+str(img.shape[1])+str(row)+".tif")
+						new.save(path_save+"/"+midname+"_"+str(img.shape[1])+"_"+str(row)+".tif")
 					if img.shape[0]-row-512<30 and img.shape[1]-col-512>30:
 						imgdatas[:,:,0]=img[img.shape[0]-512:img.shape[0],col:col+512,0]
 						new=array_to_img(imgdatas)
-						new.save(path_save+"/"+midname+" "+str(col)+str(img.shape[0])+".tif")
+						new.save(path_save+"/"+midname+"_"+str(col)+"_"+str(img.shape[0])+".tif")
 						
 					if img.shape[0]-row-512<30 and img.shape[1]-col-512<30:
 						imgdatas[:,:,0]=img[img.shape[0]-512:img.shape[0],img.shape[1]-512:img.shape[1],0]	
 						new=array_to_img(imgdatas)
-						new.save(path_save+"/"+midname+" "+str(img.shape[1])+str(img.shape[0])+".tif")
+						new.save(path_save+"/"+midname+"_"+str(img.shape[1])+"_"+str(img.shape[0])+".tif")
 					
 	elif img_temp.shape[0]==512 and img_temp.shape[1]>512:	#by default: the width of the image is 512px.
 		imgdatas = np.ndarray((512,512,1), dtype=np.uint8)
@@ -85,7 +85,7 @@ def splitimages(path,path_save,img_type):
 			for col in range (0,img.shape[1]-512,30):		#step length: 30
 				imgdatas[:,:,0]=img[row:row+512,col:col+512,0]
 				new=array_to_img(imgdatas)
-				new.save(path_save+"/"+midname+" "+str(col)+".tif")
+				new.save(path_save+"/"+midname+"_"+"0"+"_"+str(col)+".tif")
 	else:	#shape is exactly 512*512
 		imgdatas = np.ndarray((512,512,1), dtype=np.uint8)
 		for imgname_temp in imgs:
