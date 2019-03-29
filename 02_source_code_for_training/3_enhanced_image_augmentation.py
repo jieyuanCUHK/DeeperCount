@@ -86,7 +86,7 @@ for imgname in imgs:
     img_t = load_img(path_merge+"/"+midname)
     x_t = img_to_array(img_t)
     #print int(nb_batches)
-    for _ in range(5):
+    for _ in range(nb_batches):
 	batches.append(
 	    np.array([x_t for _ in range (batch_size)], dtype=np.uint8)
 	)
