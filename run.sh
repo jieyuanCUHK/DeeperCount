@@ -15,7 +15,7 @@ python ./02_source_code/1_image_deformation.py
 #3. image augmentation:
 #(1) using implementation in Keras, simple augmentation:
 python ./02_source_code_for_training/2_original_image_augmentation.py number_of_images_after_augmentation
-#results will be stored in ./03_image_directory/After_augmentation_primary
+#results will be stored in ./03_image_directory/After_augmentation_primary.  "number_of_images_after_augmentation": the number of augmented image outputs for one input image. 
 
 #(2) or using imgaug, complexed image augmentation:
 python ./02_source_code_for_training/3_enhanced_image_augmentation.py batch_num batch_size
