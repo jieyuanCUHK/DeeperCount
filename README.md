@@ -52,7 +52,7 @@ python ./02_source_code_for_training/0_split_image.py image_format
 #### 3. conduct image deformation;
 ```console
 python ./02_source_code/1_image_deformation.py
-# merged image and image after deformation will be stored in ./03_image_directory/Merged_after_deform, with "train" in name beginning.
+# merged image and image after deformation will be stored in ./03_image_directory/Merged_after_deform. Images with "train" in name beginning are the deformed images.
 ```
 
 #### 4. conduct image augmentation:
@@ -60,7 +60,7 @@ python ./02_source_code/1_image_deformation.py
 ##### 4.1 using implementation in Keras, simple augmentation:
 ```console
 python ./02_source_code_for_training/2_original_image_augmentation.py number_of_images_after_augmentation
-# results will be stored in ./03_image_directory/After_augmentation_primary
+# results will be stored in ./03_image_directory/After_augmentation_primary. "number_of_images_after_augmentation": the number of augmented image outputs for one input image. 
 ```
 
 ##### 4.2 or using imgaug, complexed image augmentation:
