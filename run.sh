@@ -41,4 +41,4 @@ python ./04_source_code_for_predicting/0_get_ready_for_predicting.py image_forma
 #(2) final image prediction:
 python ./04_source_code_for_predicting/1_predicting_using_DeeperCount.py network_parameter
 #need to specify the parameter you want to use: unet_user_new.hdf5|unet.hdf5|unet_refined.hdf5
-#the predicted images are stored in ./03_image_directory/Predict_image in jpg format 
+#the predicted images are stored in ./03_image_directory/Prediction_results in jpg format 
