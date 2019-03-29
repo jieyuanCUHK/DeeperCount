@@ -44,7 +44,7 @@ tar -xzvf ./01_model_parameters/parameter.tar.gz -C ./01_model_parameters
 #### 2. split large images to 512*512 tif images:
 ```console
 python ./02_source_code_for_training/0_split_image.py image_format
-# images should be put into ./03_image_directory/Train_image and ./03_image_directory/Label_image
+# images should be put into ./03_image_directory/Train_image and ./03_image_directory/Label_image, the corresponding image and label should have the same name.
 # supported image format: jpg/png/tif
 # splited images will be stored into ./03_image_directory/Split_train_image and ./03_image_directory/Split_label_image
 ```
