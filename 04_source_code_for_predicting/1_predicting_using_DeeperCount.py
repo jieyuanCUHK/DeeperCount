@@ -2,7 +2,7 @@ import os
 import sys
 #coding=utf-8  
   
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"	#default: using one single GPU
+os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"	#default: using two GPUs
 from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_array, load_img
 from keras.utils import multi_gpu_model
 import numpy as np
@@ -134,8 +134,6 @@ if __name__ == '__main__':
 	if sys.argv[1]=="unet.hdf5":
 		model=myunet.create_model()
 
-		#do not use multi GPU by default
-		#model = multi_gpu_model(model, gpus=2)
 		model.load_weights("./01_model_parameters/unet.hdf5")
 		temp=myunet.predict(model,option="aug")
 		myunet.save_predicted_img(temp)
@@ -144,7 +142,7 @@ if __name__ == '__main__':
 		model=myunet.create_model()
 		
 		#do not use multi GPU by default
-		#model = multi_gpu_model(model, gpus=2)
+		model = multi_gpu_model(model, gpus=2)
 		model.load_weights("./01_model_parameters/unet_refined.hdf5")
 		temp=myunet.predict(model,option="aug")
 		myunet.save_predicted_img(temp)
@@ -153,7 +151,7 @@ if __name__ == '__main__':
 		model=myunet.create_model()
 
 		#do not use multi GPU by default
-		#model = multi_gpu_model(model, gpus=2)
+		model = multi_gpu_model(model, gpus=2)
 		model.load_weights("./01_model_parameters/unet_user_new.hdf5")
 		temp=myunet.predict(model,option="aug")
 		myunet.save_predicted_img(temp)
